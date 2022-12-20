@@ -9,7 +9,7 @@ on:
  # Allows you to run this workflow manually from the Actions tab 
    workflow_dispatch: 
  # workflow run is made up of one or more jobs that can run sequentia 
-jobs : 
+jobs: 
   build: 
    name: "windows OneFLOwCFD build"
    runs-on: windows-latest 
@@ -24,7 +24,7 @@ jobs :
        ls ${{ github.workspace }} 
       shell: pwsh 
     - name: CMake Build 
-      run: | 
+      run: |
        cd ${{ github . workspace }} 
        ls 
        mkdir build 
@@ -36,8 +36,9 @@ jobs :
     - name: CMake Install 
       env: 
        prefix: ${{ github.workspace }} 
-      run: | 
-       cd ${{ github . workspace }}/build
+      run: |
+       cd ${{ github . workspace }} 
+       cd build
        ls 
        cmake --build . --target INSTALL --config release 
        ls "${{env.prefix}}" 
