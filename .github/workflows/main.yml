@@ -20,7 +20,8 @@ jobs :
       shell: pwsh 
     - name: Display github.workspace by pwsh 
       run: | 
-       echo "github.workspace is ${{ github.workspace }}."ls ${{ github.workspace }} 
+       echo "github.workspace is ${{ github.workspace }}."
+       ls ${{ github.workspace }} 
       shell: pwsh 
     - name: CMake Build 
       run: | 
